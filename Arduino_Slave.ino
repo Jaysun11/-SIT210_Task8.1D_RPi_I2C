@@ -7,19 +7,19 @@ void setup() {
 
 Serial.begin(9600);                        
 Wire.begin(0x08);                          
-Wire.onReceive(receiveData);               //callback for i2c. Jump to void recieveData() function when pi sends data
+Wire.onReceive(receiveData);  
 
 }
 
 void loop () {
 
-    delay(100);                            //Delay 0.1 seconds. Something for the arduino to do when it is not inside the reciveData() function. This also might be to prevent data collisions.
+    delay(100);                        
 
 }
 
 void receiveData(int byteCount) { 
 
-   while(Wire.available()) {               //Wire.available() returns the number of bytes available for retrieval with Wire.read(). Or it returns TRUE for values >0.
+   while(Wire.available()) {     
        temp=Wire.read();
      }
 
